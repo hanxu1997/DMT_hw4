@@ -47,6 +47,8 @@ for i = 1:filenum
             padding = imrotate(padding,-4,'bicubic','crop');
         case 10
             padding = imrotate(padding, 2,'bicubic','crop');
+        case 15
+            padding = imrotate(padding, -10,'bicubic','crop');
         otherwise
             
     end
@@ -54,18 +56,22 @@ for i = 1:filenum
     file_pad = fullfile(folder_pad,padfilename);
     imwrite(padding, file_pad);
     switch i
-        case 1
-            resizeImg = imresize(padding,[22 22]);
-            C = zeros(28);
-            C(6:27,6:27) = resizeImg;
         case 5
             resizeImg = imresize(padding,[22 28]);
             C = zeros(28);
             C(6:27,1:28) = resizeImg;
-         case 10
+        case 10
             resizeImg = imresize(padding,[22 24]);
             C = zeros(28);
-            C(5:26,4:27) = resizeImg;       
+            C(5:26,4:27) = resizeImg;  
+        case 15
+            resizeImg = imresize(padding,[22 24]);
+            C = zeros(28);
+            C(5:26,3:26) = resizeImg;
+        case 16
+            resizeImg = imresize(padding,[22 24]);
+            C = zeros(28);
+            C(5:26,4:27) = resizeImg;   
         otherwise
             resizeImg = imresize(padding,[22 22]);
             C = zeros(28);
