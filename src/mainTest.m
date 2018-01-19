@@ -3,7 +3,7 @@ load('parms/bc.mat', 'bc');
 load('parms/Wd.mat', 'Wd');
 load('parms/bd.mat', 'bd');
 
-load('..\output\S4\testImages.mat','testImages');
+% load('..\output\S4\testImages.mat','testImages');
 % %test data ≤‚ ‘ºØ
 % addpath ./common/;
 % testImages = loadMNISTImages('./common/t10k-images-idx3-ubyte');

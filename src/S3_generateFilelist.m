@@ -13,6 +13,7 @@ folder_filelist = '..\output\S3';
 fid = fopen(fullfile(folder_filelist,filelist_name),'w+');
     filelist = dir(fullfile(folder_source,['*' '.jpg']));
     filenum = length(filelist);
+    filelist = F23_SortFileListByNumber(filelist,'.jpg');
     for j=1:filenum
         % 逐行写入[序号 文件名]
         fprintf(fid,'%d %s\n',j,filelist(j).name);

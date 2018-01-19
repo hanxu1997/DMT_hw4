@@ -69,7 +69,9 @@ for i=1:size(stats)
     imshow(I);
     titlename = ['cut',num2str(i)];
     title(titlename);
-    filename = ['..\output\S2\cut\cut',num2str(i),'.jpg'];
+%     filename = ['..\output\S2\cut\cut',num2str(i),'.jpg'];
+    filename = sprintf('%d.jpg',i);
+    filename = fullfile('..\output\S2\cut',filename);
     imwrite(I,filename);
 end
 saveas(gcf, '..\output\S2\figure4.jpg');
